@@ -3,10 +3,12 @@ FROM node:20-slim
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm ci
 
-COPY dist/ ./dist/
-COPY src/prompts/ ./src/prompts/
+COPY tsconfig.json ./
+COPY src/ ./src/
+
+RUN npx tsc
 
 EXPOSE 3001
 
