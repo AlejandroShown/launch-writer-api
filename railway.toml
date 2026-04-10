@@ -1,6 +1,0 @@
-[build]
-builder = "nixpacks"
-buildCommand = "npx tsc"
-
-[deploy]
-startCommand = "node dist/index.js"
